@@ -36,6 +36,6 @@ Install Command: npm install
 ## Contacto configurado
 
 - WhatsApp: 222 280 9070
-- Correo: arely.segurossaga@gmail.com
+- Correo: arelyg.segurossaga@gmail.com
 
 El formulario abre WhatsApp o correo con los datos capturados.
