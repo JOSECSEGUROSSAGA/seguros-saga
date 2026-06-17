@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const WHATSAPP_NUMBER = '522222809070';
-const EMAIL = 'arely.segurossaga@gmail.com';
+const EMAIL = 'arelyg.segurossaga@gmail.com';
 
 const ahorroOptions = [
   'Menos de $12,000 anuales (menos de $1,000 mensuales)',
