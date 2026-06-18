@@ -1,17 +1,13 @@
-# Seguros Saga - Versión 3 lista para Vercel
+# Seguros Saga - Versión 4 lista para Vercel
 
 Cambios incluidos:
-- Imagen de fondo en la página principal.
-- Imagen destacada en autos, salud, vida y ahorro y empresarial.
-- Botón flotante de WhatsApp en todas las páginas.
-- Orden de productos: Vida y ahorro, Salud, Autos, Empresarial.
-- Contactos agregados: 2213456083 y josec.segurossaga@gmail.com.
-- Los botones principales de contacto siguen dirigiendo al WhatsApp principal: 2222809070.
-
-Nota: Las fotografías se cargan como imágenes remotas de stock desde URLs públicas. Si prefieres fotos propias, reemplaza las URLs en `src/styles.css` por imágenes guardadas en `public/`.
-
-## Configuración en Vercel
-Framework Preset: Vite
-Build Command: npm run build
-Output Directory: dist
-Install Command: npm install
+- Encabezado: SEGUROS SAGA + slogan “PROTEGIÉNDOTE EN CADA PASO DE TU HISTORIA”.
+- Página principal centrada y sin tarjeta del logo/texto de orientación.
+- Sección de soluciones cambiada a “¿Qué deseas proteger?”.
+- Tarjetas: Mi futuro y el de mi familia, Mi Salud, Mi(s) Auto(s), Mi empresa.
+- Tarjetas con imagen de fondo relacionada.
+- Eliminado bloque de “Contacto Seguros Saga”.
+- Footer con “Teléfonos” y “Correos”.
+- Imagen de Vida y Ahorro enfocada en graduación.
+- Imagen de Auto sustituida por auto familiar/sedán.
+- WhatsApp principal de botones conservado: 2222809070.
