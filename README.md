@@ -1,8 +1,10 @@
-# Seguros Saga - Versión 5 lista para Vercel
+# Seguros Saga - Versión 6 lista para Vercel
 
-Cambios incluidos:
-- Botón principal cambiado de “Hablar con un asesor” a “Contáctanos”.
-- Teléfono actualizado: 2213456083 reemplazado por 2221083776.
-- Imagen de “Mi futuro y el de mi familia” y subpágina de Vida y Ahorro cambiada a una familia feliz.
-- Imagen de auto en página principal y subpágina cambiada a un auto más familiar/austero.
-- WhatsApp principal de botones conservado: 2222809070.
+Cambio principal:
+- Imagen de auto actualizada tanto en la tarjeta de la página principal como en la subpágina de autos.
+- Se eligió una imagen más familiar/austera, similar al estilo de un sedán o SUV familiar, evitando estética de auto deportivo.
+
+Se conservan:
+- Botón “Contáctanos”.
+- Teléfono secundario: 222 108 3776.
+- WhatsApp principal de botones: 222 280 9070.
