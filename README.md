@@ -1,8 +1,9 @@
-# Seguros Saga - Versión 7 lista para Vercel
+# Seguros Saga - Versión 8 lista para Vercel
 
 Cambios incluidos:
-- Portada: imagen de fondo más visible y mensaje cambiado a “PROTEGE LO QUE AMAS CONSTRUYENDO EL LEGADO QUE SUEÑAS.”
-- Subpágina “Mi futuro y el de mi familia”: título cambiado y texto destacado agregado antes de los productos.
-- Subpágina “Mi salud”: título y texto principal actualizados.
-- Subpágina “Mi empresa”: título y texto principal actualizados.
-- Se conserva el resto de la estructura, botones y contactos.
+- Bloques destacados después del título en todas las subpáginas principales:
+  - Mi futuro y el de mi familia
+  - Mi salud
+  - Mi(s) auto(s)
+  - Mi empresa
+- El botón flotante de WhatsApp ahora se distingue más con borde blanco, sombra, mayor tamaño y animación suave.
