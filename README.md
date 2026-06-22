@@ -1,10 +1,8 @@
-# Seguros Saga - Versión 6 lista para Vercel
+# Seguros Saga - Versión 7 lista para Vercel
 
-Cambio principal:
-- Imagen de auto actualizada tanto en la tarjeta de la página principal como en la subpágina de autos.
-- Se eligió una imagen más familiar/austera, similar al estilo de un sedán o SUV familiar, evitando estética de auto deportivo.
-
-Se conservan:
-- Botón “Contáctanos”.
-- Teléfono secundario: 222 108 3776.
-- WhatsApp principal de botones: 222 280 9070.
+Cambios incluidos:
+- Portada: imagen de fondo más visible y mensaje cambiado a “PROTEGE LO QUE AMAS CONSTRUYENDO EL LEGADO QUE SUEÑAS.”
+- Subpágina “Mi futuro y el de mi familia”: título cambiado y texto destacado agregado antes de los productos.
+- Subpágina “Mi salud”: título y texto principal actualizados.
+- Subpágina “Mi empresa”: título y texto principal actualizados.
+- Se conserva el resto de la estructura, botones y contactos.
