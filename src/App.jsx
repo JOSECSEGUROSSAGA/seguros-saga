@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 const WHATSAPP_NUMBER = '522222809070';
 const PHONE_1 = '222 280 9070';
-const PHONE_2 = '221 345 6083';
+const PHONE_2 = '222 108 3776';
 const EMAIL_1 = 'arelyg.segurossaga@gmail.com';
 const EMAIL_2 = 'josec.segurossaga@gmail.com';
 
@@ -55,9 +55,7 @@ export default function App() {
   );
 }
 
-function getCleanPath() {
-  return routes.includes(window.location.pathname) ? window.location.pathname : '/';
-}
+function getCleanPath() { return routes.includes(window.location.pathname) ? window.location.pathname : '/'; }
 
 function Header({ navigate, openWhatsApp, currentPath }) {
   return (
@@ -96,7 +94,7 @@ function Home({ navigate, openWhatsApp }) {
           <h1>Decisiones importantes, explicadas con claridad y confianza.</h1>
           <p className="lead centered-lead">En Seguros Saga te acompañamos para cuidar tu patrimonio, tu salud, tu familia y tus proyectos con soluciones pensadas para cada etapa de tu vida.</p>
           <div className="actions centered-actions">
-            <button type="button" className="btn btn-primary" onClick={() => openWhatsApp()}>Hablar con un asesor</button>
+            <button type="button" className="btn btn-primary" onClick={() => openWhatsApp()}>Contáctanos</button>
             <button type="button" className="btn btn-soft" onClick={() => document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth' })}>Ver soluciones</button>
           </div>
         </div>
@@ -115,16 +113,8 @@ function Home({ navigate, openWhatsApp }) {
 
       <section className="advisory-soft">
         <div className="container advisory-grid">
-          <div>
-            <p className="section-kicker">Nuestro enfoque</p>
-            <h2>Primero entendemos tus objetivos. Después diseñamos una estrategia.</h2>
-            <p>Nuestro trabajo es escuchar, explicar y acompañarte para que puedas tomar una decisión informada, sin presión y con una visión clara de protección.</p>
-          </div>
-          <div className="steps">
-            <ProcessStep icon="👥" title="1. Diagnóstico" text="Conocemos tu situación, tus metas y tus prioridades." />
-            <ProcessStep icon="📋" title="2. Opciones claras" text="Te presentamos alternativas comprensibles y alineadas a tus necesidades." />
-            <ProcessStep icon="🤝" title="3. Acompañamiento" text="Te damos seguimiento antes, durante y después de contratar." />
-          </div>
+          <div><p className="section-kicker">Nuestro enfoque</p><h2>Primero entendemos tus objetivos. Después diseñamos una estrategia.</h2><p>Nuestro trabajo es escuchar, explicar y acompañarte para que puedas tomar una decisión informada, sin presión y con una visión clara de protección.</p></div>
+          <div className="steps"><ProcessStep icon="👥" title="1. Diagnóstico" text="Conocemos tu situación, tus metas y tus prioridades." /><ProcessStep icon="📋" title="2. Opciones claras" text="Te presentamos alternativas comprensibles y alineadas a tus necesidades." /><ProcessStep icon="🤝" title="3. Acompañamiento" text="Te damos seguimiento antes, durante y después de contratar." /></div>
         </div>
       </section>
     </>
@@ -132,46 +122,30 @@ function Home({ navigate, openWhatsApp }) {
 }
 
 function ProductCard({ photo, title, text, onClick }) {
-  return (
-    <button type="button" className={`product-card photo-card ${photo}`} onClick={onClick}>
-      <div className="photo-card-overlay" />
-      <div className="photo-card-content">
-        <h3>{title}</h3>
-        <p>{text}</p>
-        <strong>Conocer más →</strong>
-      </div>
-    </button>
-  );
+  return <button type="button" className={`product-card photo-card ${photo}`} onClick={onClick}><div className="photo-card-overlay" /><div className="photo-card-content"><h3>{title}</h3><p>{text}</p><strong>Conocer más →</strong></div></button>;
 }
-
-function ProcessStep({ icon, title, text }) {
-  return <article className="process-step"><span>{icon}</span><h3>{title}</h3><p>{text}</p></article>;
-}
+function ProcessStep({ icon, title, text }) { return <article className="process-step"><span>{icon}</span><h3>{title}</h3><p>{text}</p></article>; }
 
 function AutosPage({ navigate, openWhatsApp }) {
   const [form, setForm] = useState({ marcaModelo: '', edadConductor: '', codigoPostal: '', tipo: 'Particular' });
   const message = useMemo(() => ['Hola, quiero cotizar un Seguro de Auto con Seguros Saga.', '', `Tipo: ${form.tipo || 'No capturado'}`, `Marca y modelo del vehículo: ${form.marcaModelo || 'No capturado'}`, `Edad del conductor: ${form.edadConductor || 'No capturada'}`, `Código postal: ${form.codigoPostal || 'No capturado'}`].join('\n'), [form]);
   return <PageShell navigate={navigate} kicker="Seguro de auto" title="Tu destino es llegar seguro. Nuestra misión es respaldarte en el camino." imageClass="auto-photo"><p className="page-lead">Cada trayecto cuenta: llevar a tus hijos a la escuela, llegar a tu trabajo o disfrutar un viaje con tu familia. Por eso te ayudamos a proteger tu vehículo y tu patrimonio con soluciones diseñadas para darte tranquilidad cuando más lo necesitas.</p><div className="image-choice-grid"><IllustrationCard icon="🚘" title="Particular" text="Protección para el vehículo que usas todos los días." active={form.tipo === 'Particular'} onClick={() => setForm({ ...form, tipo: 'Particular' })} /><IllustrationCard icon="🚚" title="Flotilla" text="Soluciones para varios vehículos y operación empresarial." active={form.tipo === 'Flotilla'} onClick={() => setForm({ ...form, tipo: 'Flotilla' })} /></div><QuoteForm title="Obtén tu cotización" onSubmit={() => openWhatsApp(message)}><Input label="Marca y modelo del vehículo" value={form.marcaModelo} onChange={(v) => setForm({ ...form, marcaModelo: v })} placeholder="Ej. Kia K3 2024" /><Input label="¿Cuántos años tiene el conductor?" value={form.edadConductor} onChange={(v) => setForm({ ...form, edadConductor: v })} placeholder="Ej. 35" type="number" /><Input label="Código postal" value={form.codigoPostal} onChange={(v) => setForm({ ...form, codigoPostal: v })} placeholder="Ej. 72000" /></QuoteForm></PageShell>;
 }
-
 function SaludPage({ navigate, openWhatsApp }) {
   const [form, setForm] = useState({ integrantes: '', edades: '', salud: '' });
   const message = useMemo(() => ['Hola, quiero cotizar un Seguro de Gastos Médicos Mayores con Seguros Saga.', '', `Integrantes a asegurar: ${form.integrantes || 'No capturado'}`, `Edad(es): ${form.edades || 'No capturada(s)'}`, `Estado de salud: ${form.salud || 'No capturado'}`].join('\n'), [form]);
   return <PageShell navigate={navigate} kicker="Mi salud" title="Seguros de Gastos Médicos Mayores" imageClass="health-photo"><p className="page-lead">La mejor inversión siempre será tu salud y la de quienes más amas. Una enfermedad o accidente puede cambiarlo todo en un instante. Con un Seguro de Gastos Médicos Mayores cuentas con el respaldo necesario para acceder a atención médica de calidad mientras proteges tu patrimonio.</p><FeatureBand icon="🏥" title="Si quieres cotizar, contáctanos" text="Comparte algunos datos básicos y un asesor se pondrá en contacto contigo por WhatsApp." /><QuoteForm title="Cotiza tu protección médica" onSubmit={() => openWhatsApp(message)}><Input label="¿Cuántos integrantes desean asegurar?" value={form.integrantes} onChange={(v) => setForm({ ...form, integrantes: v })} placeholder="Ej. 1, 2, 4" type="number" /><Input label="Edad o edades" value={form.edades} onChange={(v) => setForm({ ...form, edades: v })} placeholder="Ej. 35, 33, 8" /><Select label="¿Cómo consideran su estado de salud?" value={form.salud} onChange={(v) => setForm({ ...form, salud: v })}><option value="">Selecciona una opción</option><option>Excelente</option><option>Bueno</option><option>Regular</option><option>Malo</option></Select></QuoteForm></PageShell>;
 }
-
 function VidaAhorroPage({ navigate, openWhatsApp }) {
   const [form, setForm] = useState({ nombre: '', productos: '', ahorro: '' });
   const message = useMemo(() => ['Hola, quiero asesoría sobre Vida y Ahorro con Seguros Saga.', '', `Nombre: ${form.nombre || 'No capturado'}`, `Producto(s) de interés: ${form.productos || 'No capturado'}`, `Ahorro aproximado anual: ${form.ahorro || 'No capturado'}`].join('\n'), [form]);
   return <PageShell navigate={navigate} kicker="Mi futuro y el de mi familia" title="Protección, ahorro y planeación para el futuro" imageClass="life-photo"><div className="topic-grid"><TopicCard icon="🛡️" title="Seguros de vida" text="El amor también se demuestra protegiendo el futuro de quienes más amas. Un Seguro de Vida te permite brindar tranquilidad y estabilidad económica a tu familia ante los imprevistos de la vida. Porque proteger a quienes dependen de ti es una de las decisiones más importantes que puedes tomar hoy." /><TopicCard icon="🎓" title="Plan para el futuro de tus hijos" text="Hoy los tomas de la mano. Mañana los ayudarás a alcanzar sus sueños. Cada padre desea darles a sus hijos las mejores oportunidades. Construye un respaldo financiero que les permita continuar su formación profesional y perseguir sus metas con mayor tranquilidad." /><TopicCard icon="🌱" title="Retiro inteligente PPR" text="Haz que tus impuestos trabajen a favor de tu futuro. A través de un Plan Personal de Retiro, puedes aprovechar beneficios fiscales que te permiten optimizar tu carga tributaria mientras construyes un respaldo financiero para la etapa en la que más lo necesitarás." /><TopicCard icon="🏡" title="Planeación patrimonial" text="Trabaja unos años por tu patrimonio, disfruta sus beneficios toda la vida. A través de aportaciones programadas durante un plazo determinado, puedes construir una estrategia financiera que combine protección, ahorro y la tranquilidad de contar con un respaldo para el futuro." /></div><QuoteForm title="Solicita asesoría" onSubmit={() => openWhatsApp(message)}><Input label="Nombre" value={form.nombre} onChange={(v) => setForm({ ...form, nombre: v })} placeholder="Escribe tu nombre" /><Select label="Producto o productos de interés" value={form.productos} onChange={(v) => setForm({ ...form, productos: v })}><option value="">Selecciona una opción</option><option>Seguro de Vida</option><option>Plan para el futuro de tus hijos</option><option>Retiro inteligente PPR</option><option>Planeación patrimonial</option><option>Varios productos</option></Select><Select label="¿Cuánto quisieras ahorrar aproximadamente de manera anual?" value={form.ahorro} onChange={(v) => setForm({ ...form, ahorro: v })}><option value="">Selecciona un rango</option>{ahorroOptions.map((option) => <option key={option}>{option}</option>)}</Select></QuoteForm></PageShell>;
 }
-
 function EmpresarialPage({ navigate, openWhatsApp }) {
   const [form, setForm] = useState({ nombre: '', contacto: '' });
   const message = useMemo(() => ['Hola, quiero asesoría sobre Protección Empresarial con Seguros Saga.', '', `Nombre: ${form.nombre || 'No capturado'}`, `Número de contacto: ${form.contacto || 'No capturado'}`].join('\n'), [form]);
   return <PageShell navigate={navigate} kicker="Mi empresa" title="Protección empresarial" imageClass="business-photo"><p className="page-lead">Las grandes empresas no solo crecen, también se preparan para los imprevistos. Ayudamos a proteger lo que has construido mediante estrategias diseñadas para cuidar a tu empresa, tus colaboradores, tus clientes y la estabilidad financiera de tu organización.</p><div className="business-grid"><TopicCard icon="🏭" title="Seguro de daños" text="Protección para activos, instalaciones, operación y patrimonio empresarial." /><TopicCard icon="🏫" title="Seguro de accidentes escolares" text="Respaldo para instituciones educativas, alumnos y actividades escolares." /><TopicCard icon="⚖️" title="Seguro de responsabilidad civil" text="Cobertura ante posibles daños a terceros derivados de la operación." /><TopicCard icon="➕" title="Y mucho más..." text="Diseñamos soluciones de acuerdo con el giro, tamaño y necesidades de tu empresa." /></div><QuoteForm title="Contacto empresarial" onSubmit={() => openWhatsApp(message)}><Input label="Nombre" value={form.nombre} onChange={(v) => setForm({ ...form, nombre: v })} placeholder="Nombre completo" /><Input label="Número de contacto" value={form.contacto} onChange={(v) => setForm({ ...form, contacto: v })} placeholder="Ej. 222 280 9070" /></QuoteForm></PageShell>;
 }
-
 function PageShell({ navigate, kicker, title, imageClass, children }) { return <><section className="page-hero"><div className="container page-hero-inner page-hero-grid"><div><button type="button" className="back-link" onClick={() => navigate('/')}>← Volver a inicio</button><p className="eyebrow blue">{kicker}</p><h1>{title}</h1></div><div className={`page-photo ${imageClass || ''}`} aria-hidden="true" /></div></section><section className="container page-content">{children}</section></>; }
 function IllustrationCard({ icon, title, text, active, onClick }) { return <button type="button" className={`illustration-card ${active ? 'selected' : ''}`} onClick={onClick}><span>{icon}</span><h3>{title}</h3><p>{text}</p></button>; }
 function FeatureBand({ icon, title, text }) { return <article className="feature-band"><span>{icon}</span><div><h3>{title}</h3><p>{text}</p></div></article>; }
@@ -179,7 +153,6 @@ function TopicCard({ icon, title, text }) { return <article className="topic-car
 function QuoteForm({ title, children, onSubmit }) { return <form className="quote-form" onSubmit={(e) => { e.preventDefault(); onSubmit(); }}><h2>{title}</h2><p>Completa los datos y te contactaremos por WhatsApp para orientarte.</p><div className="quote-fields">{children}</div><button type="submit" className="btn btn-primary full">Enviar por WhatsApp</button></form>; }
 function Input({ label, value, onChange, placeholder, type = 'text' }) { return <label className="field"><span>{label}</span><input type={type} value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder} /></label>; }
 function Select({ label, value, onChange, children }) { return <label className="field"><span>{label}</span><select value={value} onChange={(e) => onChange(e.target.value)}>{children}</select></label>; }
-
 function Footer({ navigate, openEmail, openWhatsApp }) {
   return <footer className="footer"><div className="container footer-grid"><div className="footer-brand"><img src="/LOGO.jpg" alt="Logo Seguros Saga" /><div><strong>SEGUROS SAGA</strong><p>PROTEGIÉNDOTE EN CADA PASO DE TU HISTORIA</p></div></div><div className="footer-links"><button onClick={() => navigate('/vida-ahorro')}>Mi futuro y familia</button><button onClick={() => navigate('/salud')}>Mi salud</button><button onClick={() => navigate('/autos')}>Mi(s) auto(s)</button><button onClick={() => navigate('/empresarial')}>Mi empresa</button></div><div className="footer-contact"><strong>Teléfonos</strong><button onClick={() => openWhatsApp()}>{PHONE_1}</button><span>{PHONE_2}</span><strong>Correos</strong><button onClick={openEmail}>{EMAIL_1}</button><span>{EMAIL_2}</span></div></div><p className="copyright">© 2026 Seguros Saga. Todos los derechos reservados.</p></footer>;
 }
