@@ -1,0 +1,1 @@
+Si ya tienes LOGO.jpg en public, no lo borres. Esta versión sigue usando /LOGO.jpg.
